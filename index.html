@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Versoly Marquee</title>
+  </head>
+
+  <body>
+    <section class="d-js" style="display: none">
+      <div
+        style="
+          display: flex;
+          flex-direction: row;
+          height: 300px;
+          justify-content: end;
+        "
+        data-toggle="marquee"
+        data-options="{'duration': 10, 'direction': 'rtl'}"
+      >
+        <a
+          href="#"
+          style="
+            width: 400px;
+            background: lightblue;
+            padding: 0 48px;
+            border-right: black 1px solid;
+          "
+        >
+          <h2>Here is a new article about something</h2>
+        </a>
+      </div>
+    </section>
+
+    <script type="module">
+      import { Marquee } from "./src";
+
+      window.vMarquees = [];
+
+      document.querySelectorAll(".d-js").forEach((elem) => {
+        elem.style.display = "block";
+        elem.classList.remove("d-js");
+      });
+
+      document.querySelectorAll('[data-toggle="marquee"]').forEach((elem) => {
+        let t = elem.dataset.options || "{}";
+        let options = JSON.parse(t.replaceAll("'", '"'));
+        const marquee = new Marquee(elem, options);
+        window.vMarquees.push(marquee);
+      });
+    </script>
+  </body>
+</html>

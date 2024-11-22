@@ -1,0 +1,46 @@
+{
+  "name": "versoly-marquee",
+  "version": "1.0.1",
+  "description": "Marquee - A simple and small JS library to create marquee animations",
+  "author": "Versoly",
+  "license": "MIT",
+  "keywords": [
+    "marquee",
+    "Versoly Marquee",
+    "marquee CSS",
+    "marquee JS",
+    "versoly"
+  ],
+  "files": [
+    "dist"
+  ],
+  "type": "module",
+  "main": "dist/versoly-marquee.cjs",
+  "unpkg": "dist/versoly-marquee.global.min.js",
+  "jsdelivr": "dist/versoly-marquee.global.min.js",
+  "module": "./dist/versoly-marquee.mjs",
+  "exports": {
+    ".": {
+      "import": "./dist/versoly-marquee.mjs",
+      "require": "./dist/versoly-marquee.cjs"
+    }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/versoly/versoly-marquee.git"
+  },
+  "bugs": {
+    "url": "https://github.com/versoly/versoly-marquee/issues"
+  },
+  "homepage": "https://versoly.com/versoly-marquee",
+  "contributors": [
+    "Volkan Kaya <volkan@versoly.com>"
+  ],
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build"
+  },
+  "devDependencies": {
+    "vite": "^5.4.11"
+  }
+}
