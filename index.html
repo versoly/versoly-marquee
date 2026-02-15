@@ -1,9 +1,19 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Versoly Marquee</title>
+    <style>
+      *,
+      ::after,
+      ::before,
+      ::backdrop,
+      ::file-selector-button {
+        box-sizing: border-box;
+        border: 0 solid;
+      }
+    </style>
   </head>
 
   <body>
@@ -21,7 +31,44 @@
         <a
           href="#"
           style="
-            width: 400px;
+            width: 500px;
+            background: lightblue;
+            padding: 0 48px;
+            border-right: black 1px solid;
+            text-align: center;
+          "
+        >
+          <h2>Here is a new article about something</h2>
+        </a>
+        <a
+          href="#"
+          style="
+            width: 300px;
+            background: lightblue;
+            padding: 0 48px;
+            border-right: black 1px solid;
+            text-align: center;
+          "
+        >
+          <h2>Here is a another</h2>
+        </a>
+      </div>
+    </section>
+
+    <section>
+      <div
+        style="
+          display: flex;
+          flex-direction: column;
+          height: 300px;
+          margin-top: 320px;
+        "
+        data-toggle="marquee"
+        data-options="{'direction': 'ttb', 'pauseable': true, 'duration': 1}"
+      >
+        <a
+          href="#"
+          style="
             background: lightblue;
             padding: 0 48px;
             border-right: black 1px solid;
@@ -31,6 +78,8 @@
         </a>
       </div>
     </section>
+
+    <section style="height: 3000px"></section>
 
     <script type="module">
       import { Marquee } from "./src";

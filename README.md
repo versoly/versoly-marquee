@@ -2,7 +2,7 @@
     <h1>Versoly Marquee</h1>
     <p>A simple and small JS library to create marquee animations</p>
     <ul>
-        <li>800 bytes</li>
+        <li>1.1 KB</li>
         <li>Stop animation on hover</li>
         <li>Speed control</li>
     </ul>
@@ -15,42 +15,41 @@
     </p>
 </div>
 
-------
+---
 
 [![Versoly - Tailwind page builder](public/versoly.png)](https://versoly.com/tailwind-page-builder?utm_source=github&utm_medium=repo&utm_campaign=image&utm_term=versoly-marquee)
-
 
 ## Getting started
 
 Versoly marquee can be installed using npm, pnpm, CDNs. It is also tiny so you could just copy paste it onto a landing page for improved page speed.
 
-
 ### Install versoly-marquee package
+
 ```js
 npm install versoly-marquee --save
 ```
 
 ### import versoly-marquee package
+
 ```js
 import { Marquee } from "versoly-marquee";
 
 // add data-toggle="marquee"
 document.querySelectorAll('[data-toggle="marquee"]').forEach((elem) => {
-    // set options on the element using data-options="{'duration': 10, 'direction': 'rtl'}"
-    let t = elem.dataset.options || "{}";
-    // parse data-options using replace for security instead of eval 
-    let options = JSON.parse(t.replaceAll("'", '"'));
-    // add Marquee animation
-    const marquee = new Marquee(elem, options);
+  // set options on the element using data-options="{'duration': 10, 'direction': 'rtl'}"
+  let t = elem.dataset.options || "{}";
+  // parse data-options using replace for security instead of eval
+  let options = JSON.parse(t.replaceAll("'", '"'));
+  // add Marquee animation
+  const marquee = new Marquee(elem, options);
 });
 ```
 
-
 ### CDN
-```html
-<script src="https://unpkg.com/versoly-marquee@1/dist/index.global.min.js"></script>
-```
 
+```html
+<script src="https://unpkg.com/versoly-marquee@1/dist/versoly-marquee.iife.js"></script>
+```
 
 ## Frequently Asked Questions
 
@@ -70,13 +69,11 @@ There is no way to only use CSS to create a marquee that isn't a fixed width.
 
 Slider libraries are usually 20-100x bigger than versoly-marquee, 99% of the features aren't needed.
 
-
 ## Roadmap
 
 - Responsive options
 - Plugins. On scroll, on mouse over.
 - Vue/React and other JS frameworks
-
 
 ## Community
 
@@ -87,3 +84,14 @@ If you need help or just want to discuss about the library join the community on
 For casual chatting with others using the library:
 
 [Join the Versoly Discord Server](https://discord.versoly.com)
+
+## Changelog
+
+#### v1.1.0
+
+- Fix reduce elements created
+- Add use observer to pause animation when not in viewport
+- Add destroy method to clean up event listeners and intervals
+- Upgrade to Vite 8 beta
+- Upgrade to Typescript
+- Add oxfmt and oxlint

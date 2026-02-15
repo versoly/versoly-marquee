@@ -9,11 +9,17 @@ const config = {
     },
   },
   build: {
-    target: ["chrome58", "firefox57", "safari11", "edge79"],
+    target: [
+      "chrome" + "109",
+      "firefox" + "135",
+      "safari" + "17",
+      "edge" + "135",
+    ],
     lib: {
       entry: resolve(__dirname, "src/index.js"),
       name: "Marquee",
       formats: ["cjs", "esm", "iife"],
+      minify: "oxc",
       fileName: (format) => {
         let jsExtension = ".cjs";
 
@@ -22,9 +28,9 @@ const config = {
         }
 
         if (format === "iife") {
-          jsExtension = ".global.min.js";
+          jsExtension = ".iife.js";
         }
-        return `index${jsExtension}`;
+        return `versoly-marquee${jsExtension}`;
       },
     },
   },
