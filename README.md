@@ -17,7 +17,7 @@
 
 ---
 
-[![Versoly - Tailwind page builder](public/versoly.png)](https://versoly.com/tailwind-page-builder?utm_source=github&utm_medium=repo&utm_campaign=image&utm_term=versoly-marquee)
+[![Versoly - Tailwind page builder](docs/assets/versoly.png)](https://versoly.com/tailwind-page-builder?utm_source=github&utm_medium=repo&utm_campaign=image&utm_term=versoly-marquee)
 
 ## Getting started
 
